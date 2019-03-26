@@ -7,5 +7,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "omega-client": {
+      "tags": []
+    },
+    "omega-client-e2e": {
+      "tags": []
+    }
+  }
 }

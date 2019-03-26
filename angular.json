@@ -2,7 +2,129 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "omega-client": {
+      "root": "apps/omega-client/",
+      "sourceRoot": "apps/omega-client/src",
+      "projectType": "application",
+      "prefix": "omega",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/omega-client",
+            "index": "apps/omega-client/src/index.html",
+            "main": "apps/omega-client/src/main.ts",
+            "polyfills": "apps/omega-client/src/polyfills.ts",
+            "tsConfig": "apps/omega-client/tsconfig.app.json",
+            "assets": [
+              "apps/omega-client/src/favicon.ico",
+              "apps/omega-client/src/assets"
+            ],
+            "styles": ["apps/omega-client/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/omega-client/src/environments/environment.ts",
+                  "with": "apps/omega-client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "omega-client:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "omega-client:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "omega-client:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/omega-client/tsconfig.app.json",
+              "apps/omega-client/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/omega-client/src/test.ts",
+            "tsConfig": "apps/omega-client/tsconfig.spec.json",
+            "karmaConfig": "apps/omega-client/karma.conf.js",
+            "polyfills": "apps/omega-client/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "omega-client-e2e": {
+      "root": "apps/omega-client-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/omega-client-e2e/protractor.conf.js",
+            "devServerTarget": "omega-client:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "omega-client:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/omega-client-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -23,5 +145,6 @@
     "@nrwl/schematics:node-application": {
       "framework": "express"
     }
-  }
+  },
+  "defaultProject": "omega-client"
 }
