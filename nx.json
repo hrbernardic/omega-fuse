@@ -13,6 +13,9 @@
     },
     "omega-client-e2e": {
       "tags": []
+    },
+    "core": {
+      "tags": []
     }
   }
 }
