@@ -17,6 +17,12 @@ button {
     }
 }
 
+label {
+  .mat-form-field-empty {
+    margin-top: -0.45em;
+  }
+}
+
 .mat-icon {
 
     // Fix: "Font-weight config affecting the icons"
@@ -59,6 +65,16 @@ button {
 }
 
 .mat-form-field {
+
+  .mat-form-field-flex {
+    padding-top: 0.35em !important;
+  }
+
+  // Fix: ""
+  .mat-form-field-flex > .mat-form-field-infix {
+    padding: 0 0 0.5em 0 !important;
+    border-top: none;
+  }
 
     // Fix: "Table-cell and inline-table in mat-select"
     &.mat-form-field-type-mat-select {

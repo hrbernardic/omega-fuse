@@ -89,35 +89,39 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // Subscribe to config changes
-    this._fuseConfigService.config
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((config) => {
+    {
 
-        this.fuseConfig = config;
+      this._fuseConfigService.config
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe((config) => {
+          // if (config !== undefined) return;
 
-        // Boxed
-        if ( this.fuseConfig.layout.width === 'boxed' )
-        {
-          this.document.body.classList.add('boxed');
-        }
-        else
-        {
-          this.document.body.classList.remove('boxed');
-        }
+          this.fuseConfig = config;
 
-        // Color theme - Use normal for loop for IE11 compatibility
-        for ( let i = 0; i < this.document.body.classList.length; i++ )
-        {
-          const className = this.document.body.classList[i];
-
-          if ( className.startsWith('theme-') )
+          // Boxed
+          if ( this.fuseConfig.layout.width === 'boxed' )
           {
-            this.document.body.classList.remove(className);
+            this.document.body.classList.add('boxed');
           }
-        }
+          else
+          {
+            this.document.body.classList.remove('boxed');
+          }
 
-        this.document.body.classList.add(this.fuseConfig.colorTheme);
-      });
+          // Color theme - Use normal for loop for IE11 compatibility
+          for ( let i = 0; i < this.document.body.classList.length; i++ )
+          {
+            const className = this.document.body.classList[i];
+
+            if ( className.startsWith('theme-') )
+            {
+              this.document.body.classList.remove(className);
+            }
+          }
+
+          this.document.body.classList.add(this.fuseConfig.colorTheme);
+        });
+    }
   }
 
   ngOnDestroy(): void {

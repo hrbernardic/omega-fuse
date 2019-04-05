@@ -1,10 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+// adjust the icons path
+$ag-mat-icons-path: "~ag-grid-community/src/styles/ag-theme-material/icons/";
+$ag-icons-path: "~ag-grid-community/src/styles/ag-theme-base/icons/";
 
+@import '~ag-grid-community/src/styles/ag-grid';
+@import '~ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material';
 // Import Fuse core library
 @import "../../../libs/core/src/lib/fuse/scss/core";
 
 // Import app.theme.scss
 @import "app/app.theme";
 
+//$ag-icons-path: '~ag-grid/src/styles/icons/';
+
+
+
+
+// HACK - Header line height fix, check for fuse theme conflicts
+.ag-header-cell-text {
+  line-height: 56px;
+}
+
+.ag-theme-material {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.ag-theme-material .ag-header {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.49);
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.ag-theme-material .ag-header-cell, .ag-theme-material .ag-header-group-cell {
+  line-height: 64px;
+}
+
+div.ag-root .ag-cell-focus {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.ag-theme-material .ag-paging-panel {
+  height: 52px;
+}
+
+.ag-header-cell-label {
+  align-items: center;
+}
+
+.material2 .nav .nav-item .nav-link, .nav.material2 .nav-item .nav-link {
+  height: 40px;
+  padding: 0 12px 0 24px;
+  border-radius: 0 20px 20px 0;
+  margin-right: 16px;
+}
+
+label {
+  &.mat-form-field-empty {
+    margin-top: -0.45em;
+  }
+}
+
+// OMEGA Styles
+.omega-form-field-label {
+  color: #767676;
+  margin-bottom: 16px;
+}
+
+//.mat-form-field-appearance-outline .mat-form-field-infix {
+//  padding: 0 !important;
+//}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* Better Font Rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  /* Better Font Rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

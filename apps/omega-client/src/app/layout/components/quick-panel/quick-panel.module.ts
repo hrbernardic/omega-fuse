@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatDividerModule, MatListModule, MatSlideToggleModule } from '@angular/material';
+import { MatDividerModule, MatListModule, MatRadioModule, MatSlideToggleModule } from '@angular/material';
 import { QuickPanelComponent } from './quick-panel.component';
 import { FuseSharedModule } from '@omega/core';
 
@@ -12,8 +12,10 @@ import { FuseSharedModule } from '@omega/core';
         MatDividerModule,
         MatListModule,
         MatSlideToggleModule,
+        MatRadioModule,
 
-        FuseSharedModule,
+
+        FuseSharedModule
     ],
     exports: [
         QuickPanelComponent

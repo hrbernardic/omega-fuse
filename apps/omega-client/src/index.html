@@ -3,13 +3,13 @@
 
 <head>
 
-  <title>Fuse - Angular 7+ Material Design Admin Template</title>
+  <title>App template</title>
   <base href="/">
 
   <meta charset="utf-8">
   <meta name="description" content="Material design admin template with pre-built apps and pages">
   <meta name="keywords"
-        content="HTML,CSS,AngularJS,Angular,Angular 2,Angular 4,Angular 5,Angular 6,Angular 7,Material,Material 2">
+    content="HTML,CSS,AngularJS,Angular,Angular 2,Angular 4,Angular 5,Angular 6,Angular 7,Material,Material 2">
   <meta name="author" content="Withinpixels">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -130,24 +130,31 @@
       0% {
         transform: rotate(0deg) scale(0.5);
       }
+
       100% {
         transform: rotate(360deg) scale(0.5);
       }
     }
 
     @keyframes left-wobble {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: rotate(130deg);
       }
+
       50% {
         transform: rotate(-5deg);
       }
     }
 
     @keyframes right-wobble {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: rotate(-130deg);
       }
+
       50% {
         transform: rotate(5deg);
       }
@@ -157,24 +164,31 @@
       12.5% {
         transform: rotate(135deg);
       }
+
       25% {
         transform: rotate(270deg);
       }
+
       37.5% {
         transform: rotate(405deg);
       }
+
       50% {
         transform: rotate(540deg);
       }
+
       62.5% {
         transform: rotate(675deg);
       }
+
       75% {
         transform: rotate(810deg);
       }
+
       87.5% {
         transform: rotate(945deg);
       }
+
       100% {
         transform: rotate(1080deg);
       }
@@ -185,37 +199,36 @@
 
 <body>
 
-<!-- FUSE Splash Screen -->
-<fuse-splash-screen id="fuse-splash-screen">
+  <!-- FUSE Splash Screen -->
+  <fuse-splash-screen id="fuse-splash-screen">
 
-  <div class="center">
+    <div class="center">
 
 
 
-    <!-- Material Design Spinner -->
-    <div class="spinner-wrapper">
-      <div class="spinner">
-        <div class="inner">
-          <div class="gap"></div>
-          <div class="left">
-            <div class="half-circle"></div>
-          </div>
-          <div class="right">
-            <div class="half-circle"></div>
+      <!-- Material Design Spinner -->
+      <div class="spinner-wrapper">
+        <div class="spinner">
+          <div class="inner">
+            <div class="gap"></div>
+            <div class="left">
+              <div class="half-circle"></div>
+            </div>
+            <div class="right">
+              <div class="half-circle"></div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- / Material Design Spinner -->
+
     </div>
-    <!-- / Material Design Spinner -->
 
-  </div>
+  </fuse-splash-screen>
+  <!-- / FUSE Splash Screen -->
 
-</fuse-splash-screen>
-<!-- / FUSE Splash Screen -->
-
-<omega-root></omega-root>
+  <omega-root></omega-root>
 
 </body>
 
 </html>
-

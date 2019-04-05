@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  <mat-label class="omega-form-field-label" fxFlex="25">{{caption}}</mat-label>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-select [formControl]="formGroup.get(controlName)" #singleSelect>
+      <mat-option>
+        <ngx-mat-select-search [formControl]="dataFilterCtrl" [placeholderLabel]="'Pretraži'"
+          [noEntriesFoundLabel]="'Traženi zapis ne postoji'"></ngx-mat-select-search>
+      </mat-option>
+      <mat-option *ngFor="let item of dataObservable | async" [value]="item[textField]">
+        {{item[textField]}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

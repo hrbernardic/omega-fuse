@@ -18,7 +18,7 @@
 
                     > .content-card {
                         background: map-get($background, card);
-                        border-radius: 8px 8px 0 0;
+                        border-radius: 1px 1px 0 0;
 
                         > .toolbar {
                             border-bottom-color: map-get($foreground, divider);
@@ -80,9 +80,9 @@
 // -----------------------------------------------------------------------------------------------------
 // @ Page Layouts
 // -----------------------------------------------------------------------------------------------------
-$carded-header-height: 200px !default;
-$carded-toolbar-height: 64px !default;
-$header-height: 120px !default;
+$carded-header-height: 135px !default;
+$carded-toolbar-height: 56px !default;
+$header-height: 200px !default;
 
 // Calculate toolbar-less carded header height
 $carded-header-height-without-toolbar: $carded-header-height - $carded-toolbar-height;

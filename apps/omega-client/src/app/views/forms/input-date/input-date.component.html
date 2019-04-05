@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  <mat-label class="omega-form-field-label" fxFlex="25">{{caption}}</mat-label>
+  <mat-form-field [formGroup]="formGroup">
+    <input matInput [matDatepicker]="picker" [formControlName]="controlName">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error>Polje je obavezno!</mat-error>
+  </mat-form-field>
+</div>
+

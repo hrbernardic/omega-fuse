@@ -1,15 +1,65 @@
-<div class="page-layout simple fullwidth">
+<div id="forms" class="page-layout carded fullwidth" fxLayout="column">
 
   <!-- HEADER -->
-  <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
-    <h2>ŠIFARNIK ADRESA</h2>
+  <div class="header accent p-24 h-80" fxLayout="row" fxLayoutAlign="start center">
+      <div class="h1 mt-16">Forms</div>
   </div>
   <!-- / HEADER -->
-
   <!-- CONTENT -->
   <div class="content p-24">
-    <p>FORMS WORKS!!</p>
-  </div>
-  <!-- / CONTENT -->
 
+    <div class="mb-24" fxLayout="column" fxLayoutAlign="start">
+
+      <!-- REACTIVE FORM EXAMPLE -->
+
+      <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start" fxFlex="100" name="form"
+        [formGroup]="form">
+        <div class="h1 form-name mb-24"><mat-icon color="primary" style="font-size: 52px; height: 52px; width: 60px; color: #00000075">account_box</mat-icon><span>Kontakt Podaci</span></div>
+        <mat-divider></mat-divider>
+        <mat-divider class="mb-28"></mat-divider>
+
+        <div fxLayout="row" fxLayoutAlign="start">
+          <div fxLayout="column" fxFlex="45">
+            <omega-input-text caption="Ime" controlName="ime" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Prezime" controlName="prezime" [formGroup]="form"></omega-input-text>
+            <omega-input-lookup [formGroup]="form" controlName="adresa" caption="Adresa" [dataObservable]="books$" textField="Title"></omega-input-lookup>
+            <omega-input-text caption="Lokacija" controlName="lokacija" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Telefon #1" controlName="telefon1" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Telefon #2" controlName="telefon2" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Mobitel #1" controlName="mobitel1" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Mobitel #2" controlName="mobitel2" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Fax" controlName="fax" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Email #1" controlName="email1" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Email #2" controlName="email2" [formGroup]="form"></omega-input-text>
+          </div>
+          <div fxFlex="10"></div>
+          <div fxFlex="45">
+            <omega-input-lookup [formGroup]="form" controlName="radniOdnos" caption="Radni odnos" [dataObservable]="books$" textField="Title"></omega-input-lookup>
+            <omega-input-text caption="Radno Mjesto" controlName="radnoMjesto" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Zanimanje" controlName="zanimanje" [formGroup]="form"></omega-input-text>
+            <omega-input-lookup [formGroup]="form" controlName="djelatnost" caption="Djelatnost" [dataObservable]="books$" textField="Title"></omega-input-lookup>
+            <omega-input-lookup [formGroup]="form" controlName="tim" caption="Tim" [dataObservable]="books$" textField="Title"></omega-input-lookup>
+            <omega-input-text caption="Radno Vrijeme" controlName="radnoVrijeme" [formGroup]="form"></omega-input-text>
+            <omega-input-text caption="Godišnji Odmor" controlName="godisnjiOdmor" [formGroup]="form"></omega-input-text>
+            <omega-input-lookup [formGroup]="form" controlName="timKontraSmjena" caption="Tim Kontra Smjena" [dataObservable]="books$" textField="Title"></omega-input-lookup>
+            <omega-input-textarea caption="Opis" controlName="opis" [formGroup]="form"></omega-input-textarea>
+          </div>
+        </div>
+
+
+
+      </form>
+
+
+
+      <!--<div class="mat-card form-errors-model p-24 mat-elevation-z4">-->
+      <!--<div class="h2 mb-24">Form model</div>-->
+      <!--<pre><code>{{form.getRawValue() | json}}</code></pre>-->
+      <!--</div>-->
+
+    </div>
+  </div>
+
+
+<!-- / CONTENT -->
 </div>

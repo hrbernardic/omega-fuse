@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  <mat-label class="omega-form-field-label" fxFlex="25">{{caption}}</mat-label>
+
+  <mat-form-field appearance="standard" fxFlex="75" [formGroup]="formGroup">
+    <input matInput [formControlName]="controlName" type="number">
+    <!--<mat-icon matSuffix class="disabled-text">account</mat-icon>-->
+    <mat-error>Polje je obavezno!</mat-error>
+  </mat-form-field>
+</div>

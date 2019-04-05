@@ -95,21 +95,21 @@ export class FuseConfigService
 
         // Reload the default layout config on every RoutesRecognized event
         // if the current layout config is different from the default one
-        this._router.events
-            .pipe(filter(event => event instanceof ResolveEnd))
-            .subscribe(() => {
-                if ( !_.isEqual(this._configSubject.getValue().layout, this._defaultConfig.layout) )
-                {
-                    // Clone the current config
-                    const config = _.cloneDeep(this._configSubject.getValue());
-
-                    // Reset the layout from the default config
-                    config.layout = _.cloneDeep(this._defaultConfig.layout);
-
-                    // Set the config
-                    this._configSubject.next(config);
-                }
-            });
+        // this._router.events
+        //     .pipe(filter(event => event instanceof ResolveEnd))
+        //     .subscribe(() => {
+        //         if ( !_.isEqual(this._configSubject.getValue().layout, this._defaultConfig.layout) )
+        //         {
+        //             // Clone the current config
+        //             const config = _.cloneDeep(this._configSubject.getValue());
+        //
+        //             // Reset the layout from the default config
+        //             config.layout = _.cloneDeep(this._defaultConfig.layout);
+        //
+        //             // Set the config
+        //             this._configSubject.next(config);
+        //         }
+        //     });
     }
 
     // -----------------------------------------------------------------------------------------------------

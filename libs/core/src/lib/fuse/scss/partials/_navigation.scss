@@ -38,7 +38,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            user-select: none;
+            user-select: text;
             color: currentColor;
 
             > .nav-link-title {

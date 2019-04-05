@@ -1,23 +1,21 @@
 <div class="navbar-header" [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
 
-    <div class="logo">
-      <mat-icon class="ml-8">import_contacts</mat-icon>
-        <span class="logo-text">APP-Shell</span>
-    </div>
+  <div class="logo">
+    <mat-icon class="ml-8">settings_ethernet</mat-icon>
+    <span class="logo-text">AppName</span>
+  </div>
 
-    <button mat-icon-button class="toggle-sidebar-folded"
-            (click)="toggleSidebarFolded()" fxHide.lt-lg>
-        <mat-icon>menu</mat-icon>
-    </button>
+  <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" fxHide.lt-lg>
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <button mat-icon-button class="toggle-sidebar-opened"
-            (click)="toggleSidebarOpened()" fxHide.gt-md>
-        <mat-icon>arrow_back</mat-icon>
-    </button>
+  <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-md>
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 
 </div>
 
 <div class="navbar-content" fusePerfectScrollbar [fusePerfectScrollbarOptions]="{suppressScrollX: true}"
-     [ngClass]="fuseConfig.layout.navbar.primaryBackground">
-    <fuse-navigation layout="vertical"></fuse-navigation>
+  [ngClass]="fuseConfig.layout.navbar.primaryBackground">
+  <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
 </div>

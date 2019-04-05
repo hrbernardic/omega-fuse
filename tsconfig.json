@@ -12,7 +12,8 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@omega/core": ["libs/core/src/index.ts"]
+      "@omega/core": ["libs/core/src/index.ts"],
+      "@omega/rhetos": ["libs/rhetos/src/index.ts"]
     },
     "module": "es2015"
   },

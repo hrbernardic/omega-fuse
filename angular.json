@@ -63,7 +63,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "omega-client:build"
+            "browserTarget": "omega-client:build",
+            "proxyConfig": "proxy.config.js"
           },
           "configurations": {
             "production": {
@@ -84,9 +85,7 @@
               "apps/omega-client/tsconfig.app.json",
               "apps/omega-client/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -126,9 +125,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/omega-client-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -153,9 +150,7 @@
               "libs/core/tsconfig.lib.json",
               "libs/core/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -164,6 +159,44 @@
             "main": "libs/core/src/test.ts",
             "tsConfig": "libs/core/tsconfig.spec.json",
             "karmaConfig": "libs/core/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "rhetos": {
+      "root": "libs/rhetos",
+      "sourceRoot": "libs/rhetos/src",
+      "projectType": "library",
+      "prefix": "omega",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/rhetos/tsconfig.lib.json",
+            "project": "libs/rhetos/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rhetos/tsconfig.lib.json",
+              "libs/rhetos/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/rhetos/src/test.ts",
+            "tsConfig": "libs/rhetos/tsconfig.spec.json",
+            "karmaConfig": "libs/rhetos/karma.conf.js"
           }
         }
       },
